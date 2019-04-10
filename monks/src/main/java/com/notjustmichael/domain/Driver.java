@@ -4,11 +4,22 @@ public class Driver {
     private String dNo, dName, dPhNo;
 
     public Driver(Builder builder) {
-        this.dNo = dNo;
-        this.dName = dName;
-        this.dPhNo = dPhNo;
+        this.dNo = builder.dNo;
+        this.dName = builder.dName;
+        this.dPhNo = builder.dPhNo;
     }
 
+    public String getdNo() {
+        return dNo;
+    }
+
+    public String getdName() {
+        return dName;
+    }
+
+    public String getdPhNo() {
+        return dPhNo;
+    }
 
     public static class Builder{
         private String dNo, dName, dPhNo;
@@ -23,15 +34,24 @@ public class Driver {
             return this;
         }
 
-        public Builder phNo( String phNo) {
-            this.dPhNo = phNo;
+        public Builder dNo(String dNo){
+            this.dNo = dNo;
             return this;
         }
+
 
         public Driver build() {
             return new Driver(this);
         }
-        
+
+        @Override
+        public String toString() {
+            return "Builder{" +
+                    "dNo='" + dNo + '\'' +
+                    ", dName='" + dName + '\'' +
+                    ", dPhNo='" + dPhNo + '\'' +
+                    '}';
+        }
     }
 
 

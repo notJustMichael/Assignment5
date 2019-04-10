@@ -5,11 +5,11 @@ import com.notjustmichael.util.Generator;
 
 public class DriverFactory {
 
-    public static Driver createDriver(String id, String name, String dPhNo) {
+    public static Driver createDriver(String dNo, String name, String dPhNo) {
         return new Driver.Builder()
                 .dPhNo(dPhNo)
                 .dName(name)
-                .dPhNo(Generator.generateId())
+                .dNo(Generator.generateId())
                 .build();
     }
 
